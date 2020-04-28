@@ -13,7 +13,7 @@ module Rh =
     let print a    = RhinoApp.WriteLine a    ; RhinoApp.Wait()
 
 
-type SeffTestPlugin () =  
+type SeffTestPlugin () =  // the Plugin singelton
 
     inherit PlugIns.PlugIn()
 
@@ -23,29 +23,17 @@ type SeffTestPlugin () =
             Rh.print  "loaded FsiRhinoTest Plugin"   
             PlugIns.LoadReturnCode.Success
   
-  
 
-  type FsiRhinoTestInitCmd () = // a dummy command just to make the plugin load
-      inherit Commands.Command()    
-     
-      static member val Instance = FsiRhinoTestInitCmd() 
-      
-      override this.EnglishName = "FsiRhinoTestInit" 
-             
-      override this.RunCommand (doc, mode)  =
-          Rh.print  "FsiRhinoTestInit ran."
-          Commands.Result.Success
-  
 
-  type FsiRhinoTestCreateSessionCmd () = 
+  type FsiRhinoTestCmd () = // the only Command  of this plugin
       inherit Commands.Command()    
       
-      static member val Instance = FsiRhinoTestCreateSessionCmd() 
+      static member val Instance = FsiRhinoTestCmd() // singelton pattern
       
-      override this.EnglishName = "FsiRhinoTestCreateSession" 
+      override this.EnglishName = "FsiRhinoTest" // type his into the rhino command line
              
       override this.RunCommand (doc, mode)  =
-          Rh.print  "FsiRhinoTestCreateSessionCmd start..."
+          Rh.print  "FsiRhinoTestCmd start..."
           
   
           let inn = new StringReader("")
@@ -55,7 +43,7 @@ type SeffTestPlugin () =
           let session = FsiEvaluationSession.Create(config, noArgs, inn, out, out)
 
   
-          Rh.print  "Hurray! FsiEvaluationSession.Created!" 
+          Rh.print  "Hurray! FsiEvaluationSession.Created! wait for evaluation ..." 
 
           session.EvalInteraction("let theAnswer = 40 + 2")
 

@@ -3,10 +3,13 @@
   
   <PropertyGroup>        
     <TargetFramework>net472</TargetFramework>    
-    <!--<LangVersion>preview</LangVersion>-->
+    
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages> <!--to only have the english resources of Fsharp.Core-->
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFSharpCoreVersion>4.7.0.0</TargetFSharpCoreVersion>
+    <!--
+      <LangVersion>preview</LangVersion>
+      <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+      <TargetFSharpCoreVersion>4.7.0.0</TargetFSharpCoreVersion>
+    -->
   </PropertyGroup>
 
 
@@ -14,7 +17,9 @@
     
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="PlugIn.fs" />
-    <None Include="App.config" />
+    <!--
+      <None Include="App.config" />
+     -->
 
  </ItemGroup>
  
@@ -23,13 +28,14 @@
 
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.7.0" /> <!--<Private>true</Private>  this makes it fail -->
-    <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" />
+    <PackageReference Update="FSharp.Core" Version="4.7.0" /> 
+    <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" /> <!--set to 33.0.1 to make it work-->
   </ItemGroup>
 
 
   <ItemGroup>
     <Reference Include="RhinoCommon">
+      <!--get from https://www.rhino3d.com/download/rhino-for-windows/6/evaluation-->
       <HintPath>C:\Program Files\Rhino 6\System\RhinoCommon.dll</HintPath>
       <Private>false</Private>
     </Reference>
