@@ -8,6 +8,7 @@
     <!--
       <LangVersion>preview</LangVersion>
       <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+      <TargetFSharpCoreVersion>4.7.0.0</TargetFSharpCoreVersion>
     -->
   </PropertyGroup>
 
@@ -16,6 +17,9 @@
     
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="PlugIn.fs" />
+    <!--
+      <None Include="App.config" />
+     -->
 
  </ItemGroup>
  
@@ -24,8 +28,8 @@
 
 
   <ItemGroup>
-    <!--<PackageReference Update="FSharp.Core" Version="4.7.0" />  -->
-    <PackageReference Include="FSharp.Compiler.Service" Version="35.0.0" /> <!--set to 33.0.1 to make it work-->
+    <PackageReference Update="FSharp.Core" Version="4.7.0" /> 
+    <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" /> <!--set to 33.0.1 to make it work-->
   </ItemGroup>
 
 
