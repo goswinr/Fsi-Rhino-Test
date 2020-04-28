@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>        
+    <TargetFramework>net472</TargetFramework>    
+    <!--<LangVersion>preview</LangVersion>-->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages> <!--to only have the english resources of Fsharp.Core-->
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFSharpCoreVersion>4.7.0.0</TargetFSharpCoreVersion>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="PlugIn.fs" />
+    <None Include="App.config" />
+
+ </ItemGroup>
+ 
+
+  <ItemGroup />
+
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.0" /> <!--<Private>true</Private>  this makes it fail -->
+    <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Reference Include="RhinoCommon">
+      <HintPath>C:\Program Files\Rhino 6\System\RhinoCommon.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+
+
+  <!--rename .dll to .rhp (Rhino plugin file)-->
+  <Target Name="RenameToRhp" BeforeTargets="AfterBuild"> 
+    <Move SourceFiles="$(TargetPath)" DestinationFiles="$(TargetDir)$(ProjectName).rhp" ContinueOnError="false" />
+  </Target>
+
+
+</Project>
