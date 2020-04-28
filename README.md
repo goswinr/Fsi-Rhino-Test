@@ -23,4 +23,4 @@ it prints
 - close Rhino
 - change the FCS version to `33.0.1` in the fsproj file
 - rebuild
-- start Rhino and type `FsiRhinoTest` to see it work (no need to drag and drop the `.rhp` file again)
+- start Rhino and type `FsiRhinoTest` to see the success message. (no need to drag and drop the `.rhp` file again)
