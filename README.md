@@ -1,6 +1,6 @@
 This repro is a minimal [Rhino3d](https://www.rhino3d.com/) plugin for hosting Fsharp.Compiler.Service.
 Everything works fine when the PackageReference  of FSharp.Compiler.Service is set to  Version **33.0.1**
-However just setting the FSharp.Compiler.Service  Version to **34.0.1** and calling 
+However just setting the FSharp.Compiler.Service  Version to **34.0.1** (or any higher version) and calling 
 `FsiEvaluationSession.Create`
 it prints 
     
