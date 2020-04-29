@@ -2,14 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>        
-    <TargetFramework>net472</TargetFramework>    
-    
-    <SatelliteResourceLanguages>en</SatelliteResourceLanguages> <!--to only have the english resources of Fsharp.Core-->
-    <!--
-      <LangVersion>preview</LangVersion>
-      <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-      <TargetFSharpCoreVersion>4.7.0.0</TargetFSharpCoreVersion>
-    -->
+    <TargetFramework>net472</TargetFramework>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>  <!--to only have the english resources of Fsharp.Core in bin folder-->
   </PropertyGroup>
 
 
@@ -27,8 +21,7 @@
   <ItemGroup />
 
 
-  <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.7.0" /> 
+  <ItemGroup>    
     <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" /> <!--set to 33.0.1 to make it work-->
   </ItemGroup>
 
