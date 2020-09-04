@@ -16,7 +16,7 @@ it prints
 ### How to reproduce the bug:
 - download a [evaluation version of Rhino](https://www.rhino3d.com/download/rhino-for-windows/6/evaluation) if you don't have it yet
 - build this repro
-- start Rhino and drag and drop the `.rhp` file from the bin folder into Rhino to load the plugin.
+- start Rhino and drag and drop the plugin file `FsiRhinoTest.rhp`  from the `bin` folder over the Rhino window to load the plugin.
 - type `FsiRhinoTest` into the Rhino command line to creat an FSI evaluation session. This will print the above message to the Rhino command line window.
 
 ### How to have it work fine:
