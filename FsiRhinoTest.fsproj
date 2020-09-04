@@ -11,15 +11,9 @@
     
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="PlugIn.fs" />
-    <!--
-      <None Include="App.config" />
-     -->
-
+    <!--   <None Include="App.config" />  -->
  </ItemGroup>
  
-
-  <ItemGroup />
-
 
   <ItemGroup>    
     <PackageReference Include="FSharp.Compiler.Service" Version="34.0.1" /> <!--set to 33.0.1 to make it work-->

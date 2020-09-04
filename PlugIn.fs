@@ -6,6 +6,7 @@ open System.IO
 
 
 module Rh = 
+    /// print to the Rhino command window
     let print text = 
         RhinoApp.WriteLine text  
         RhinoApp.Wait()
@@ -18,7 +19,7 @@ type SeffTestPlugin () =  // the Plugin singelton
     static member val Instance = SeffTestPlugin() // singelton pattern     
 
     override this.OnLoad refErrs = 
-            //Rh.print  "loaded FsiRhinoTest Plugin"   
+            Rh.print  "loaded FsiRhinoTest Plugin"   
 
             //try to explicitly load FSharp.Core.dll
             let assem = this.Assembly
@@ -50,7 +51,7 @@ type SeffTestPlugin () =  // the Plugin singelton
           let inn = new StringReader("")
           let out = new RhinoApp.CommandLineTextWriter()
           let config = FsiEvaluationSession.GetDefaultConfiguration()
-          let noArgs = [| "the first arg is ignored "|]
+          let noArgs = [| "the first arg is neded, but ignored"|]
           let session = FsiEvaluationSession.Create(config, noArgs, inn, out, out)
   
           Rh.print  "Hurray! FsiEvaluationSession.Created! wait for evaluation ..." 
