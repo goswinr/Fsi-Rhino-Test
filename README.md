@@ -1,3 +1,8 @@
+### Edit July 2021:
+A workaround to this bug is described here: https://github.com/dotnet/fsharp/issues/9064#issuecomment-872847578
+
+# Original Text:
+
 This repro is a minimal [Rhino3d](https://www.rhino3d.com/) plugin for hosting Fsharp.Compiler.Service.
 Everything works fine when the PackageReference  of FSharp.Compiler.Service is set to  Version **33.0.1**
 However just setting the FSharp.Compiler.Service  Version to **34.0.1** (or any higher version) and calling 
